@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SportStyle Rank — Ranking de ropa deportiva</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="wrap">
+    <h1>🏃‍♀️ SportStyle Rank</h1>
+    <p class="sub">
+      Comparación A/B para descubrir los productos deportivos favoritos de tus clientes.
+    </p>
+  </header>
+
+  <main class="wrap grid">
+
+    <section class="card">
+      <h2>1) Configura</h2>
+
+      <label>Tipo de cliente</label>
+      <select id="segmentSelect"></select>
+
+      <label>Objetivo de compra</label>
+      <select id="contextSelect"></select>
+
+      <div class="row">
+        <button id="btnNewPair" class="ghost">🔁 Nuevo duelo</button>
+        <button id="btnReset" class="danger">🧹 Reiniciar</button>
+      </div>
+
+      <p class="hint">Usa "Nuevo duelo" si se repite una comparación.</p>
+    </section>
+
+    <section class="card">
+      <h2>2) Elige el producto</h2>
+
+      <p id="question" class="question">—</p>
+
+      <div class="duel">
+
+        <button id="btnA" class="pick">
+          <span class="tag">A</span>
+          <span id="labelA" class="title">—</span>
+        </button>
+
+        <button id="btnB" class="pick">
+          <span class="tag">B</span>
+          <span id="labelB" class="title">—</span>
+        </button>
+
+      </div>
+
+      <p class="hint">Cada voto actualiza el ranking mediante Elo.</p>
+
+      <div class="row">
+        <button id="btnExport" class="ghost">⬇️ Exportar votos</button>
+        <button id="btnShowTop" class="primary">🏁 Ver Top 10</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>3) Ranking (Top 10)</h2>
+
+      <div id="topBox" class="topbox"></div>
+
+      <p class="hint">
+        Ranking filtrado por el tipo de cliente y el objetivo seleccionados.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="wrap foot">
+    <small>Proyecto académico — algoritmo de comparación A/B + ranking Elo.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
